@@ -1,2 +1,2 @@
 # PaginaProyectoTD
-Pagina desarrollada con github pages para el proyecto que busco desarrollar con la empresa Nutrisco
+Pagina para el proyecto con la empresa Nutrisco
