@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrisco - Productos Marinos Congelados Premium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(135deg, #001a4d 0%, #003d7a 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #4fc3f7;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #006994 0%, #00a8d8 100%);
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+
+        /* Sección de Contenido */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Sección Sobre Nosotros */
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #001a4d;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .about-text strong {
+            color: #006994;
+        }
+
+        /* Sección de Productos */
+        .products h2 {
+            font-size: 2.5rem;
+            color: #001a4d;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: #001a4d;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Sección Características */
+        .features {
+            background-color: #f8f9fa;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            color: #001a4d;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            color: #001a4d;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: #666;
+        }
+
+        /* Sección de Contacto */
+        .contact {
+            background: linear-gradient(135deg, #001a4d 0%, #003d7a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #001a4d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🐟 NUTRISCO</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h1>NUTRISCO</h1>
+        <p>Productos Marinos Congelados de Calidad Premium</p>
+        <a href="#productos" class="cta-button">Conoce Nuestros Productos</a>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <h2>Sobre Nutrisco</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        <strong>Nutrisco</strong> es una empresa líder en el procesamiento y distribución de productos marinos congelados de la más alta calidad. Con más de 20 años de experiencia en la industria, nos comprometemos a proporcionar alimentos nutritivos y frescos a clientes en todo el mundo.
+                    </p>
+                    <p>
+                        Nuestro proceso de congelación mantiene todos los nutrientes y sabor original de los productos del mar, garantizando que cada cliente reciba lo mejor de la naturaleza marina.
+                    </p>
+                    <p>
+                        Utilizamos <strong>tecnología de punta</strong> en nuestras instalaciones para asegurar que todos nuestros productos cumplan con los más altos estándares internacionales de calidad e higiene.
+                    </p>
+                </div>
+                <div class="about-text">
+                    <p>
+                        Nuestro compromiso con la sostenibilidad y la responsabilidad ambiental nos diferencia en el mercado. Trabajamos con proveedores certificados que respetan las normas de pesca sostenible.
+                    </p>
+                    <p>
+                        En Nutrisco creemos que la calidad no es negociable. Cada producto que sale de nuestras instalaciones ha sido sometido a rigurosos controles de calidad.
+                    </p>
+                    <p>
+                        Nos enorgullece servir a restaurantes, distribuidoras y consumidores finales que valoran la excelencia y la confianza en sus proveedores.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section class="products" id="productos">
+        <div class="container">
+            <h2>Nuestros Productos</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🦐</div>
+                    <div class="product-info">
+                        <h3>Camarones Congelados</h3>
+                        <p>Camarones premium seleccionados, congelados en su punto óptimo para mantener su sabor y textura.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🐟</div>
+                    <div class="product-info">
+                        <h3>Filetes de Pescado</h3>
+                        <p>Filetes frescos de pescado blanco de la mejor calidad, perfectos para cualquier preparación culinaria.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🦑</div>
+                    <div class="product-info">
+                        <h3>Calamares Frescos</h3>
+                        <p>Calamares seleccionados, limpiados y congelados para garantizar la máxima calidad y frescura.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🦪</div>
+                    <div class="product-info">
+                        <h3>Moluscos Variados</h3>
+                        <p>Selección de moluscos frescos incluyendo mejillones, almejas y ostras de temporada.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🐙</div>
+                    <div class="product-info">
+                        <h3>Pulpo Congelado</h3>
+                        <p>Pulpo de excelente calidad, procesado y congelado para conservar su textura característica.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🍤</div>
+                    <div class="product-info">
+                        <h3>Langostinos Premium</h3>
+                        <p>Langostinos seleccionados de primera categoría, ideales para ocasiones especiales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Características -->
+    <section class="features" id="caracteristicas">
+        <div class="container">
+            <h2>¿Por Qué Elegir Nutrisco?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✅</div>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Todos nuestros productos cumplen con estándares internacionales de calidad e inocuidad alimentaria.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">❄️</div>
+                    <h3>Congelación Inmediata</h3>
+                    <p>Congelamos nuestros productos en las 24 horas posteriores a su captura para máxima frescura.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Sostenibilidad</h3>
+                    <p>Comprometidos con la pesca responsable y el cuidado del medio marino.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Red de distribución eficiente que garantiza entrega rápida a cualquier parte del país.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <h3>Precios Competitivos</h3>
+                    <p>Ofrecemos la mejor relación calidad-precio del mercado sin comprometer estándares.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <h3>Atención Personalizada</h3>
+                    <p>Equipo dedicado a atender tus necesidades específicas como cliente mayorista o minorista.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Ubicación</h3>
+                    <p>Carrera 15 #45-67<br>Puerto Arturo, Colombia</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Teléfono</h3>
+                    <p>+57 (1) 2345-6789<br>+57 312-456-7890</p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p>info@nutrisco.com<br>ventas@nutrisco.com</p>
+                </div>
+            </div>
+            <a href="mailto:info@nutrisco.com" class="cta-button">Enviar Mensaje</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nutrisco. Todos los derechos reservados. | Productos Marinos Congelados Premium</p>
+    </footer>
+</body>
+</html>
