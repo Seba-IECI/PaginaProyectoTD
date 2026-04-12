@@ -1,37 +1,11 @@
-/* ===== VARIABLES Y RESET ===== */
-:root {
-  --primary-color: #001a4d;
-  --primary-dark: #000d26;
-  --primary-light: #003d7a;
-  --accent-color: #00a8e8;
-  --text-dark: #1a1a1a;
-  --text-light: #666666;
-  --bg-light: #f8f9fa;
-  --border-color: #e0e0e0;
-  --white: #ffffff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ===== BODY Y GENERAL ===== */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: var(--text-dark);
-  background-color: var(--white);
-}
+/* Empty - All styles are in index.css */
+/* This file is kept for compatibility */
 
 .app-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
-
-/* ===== HEADER Y NAVEGACIÓN ===== */
 .header {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
   color: var(--white);
