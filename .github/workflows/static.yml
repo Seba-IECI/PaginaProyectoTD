@@ -1,8 +1,9 @@
-name: Deploy React Vite Site
+name: Deploy Vite Site
 
 on:
   push:
-    branches: ["main"] # Asegúrate de que tu rama se llame main
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,10 +17,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22 # Usamos una versión moderna para evitar avisos de deprecación
           cache: 'npm'
 
       - name: Install dependencies
@@ -31,12 +32,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Vite siempre genera la web en la carpeta dist
+          path: ./dist # Vite guarda el resultado en la carpeta 'dist'
 
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps: deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
